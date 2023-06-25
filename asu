@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+
+struct node{
+    int data;
+
+    //pointer
+    node *prev;
+    node *next;
+};
+
+node *head, *del, *tail, *newNode, *sebelum, *sesudah;
+int max = 5;
+
+void insert_tail(){
+	int input;
+	if(head == NULL){
+		head = new node;
+		cout<<"Masukkan Data : ";
+		cin>>input;
+		head->data = input;
+		head->next = head;		
+	}
+	else{
+		tail = head;
+		while(tail->next != head){
+		tail = tail->next;
+		} 
+		tail->next = new node;
+		cout<<"Masukkan Data : ";
+		cin>>input;
+		tail->next->data = input;
+		tail->next->next = head;
+		tail = tail->next;
+	}
+}
+
+void isFull(){
+    if(node == max){
+        cout<<"stack full";
+    }
+}
+
+void isEmpty(){
+    if(node == 0){
+        cout<<"stack  kosong";
+    }
+}
+
+void push(){
+    
+}
+
